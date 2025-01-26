@@ -1,0 +1,8 @@
+.idea
+*.log
+go-labels-api-wrapper
+*.json
+*.csv
+*.xls
+*.xlsx
+*.txt
