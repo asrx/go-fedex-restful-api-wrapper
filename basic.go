@@ -13,29 +13,30 @@ const (
 )
 
 func getBasicUrl() string {
-	return api_basic_url_sandbox
-	// return api_basic_url
+	// return api_basic_url_sandbox
+	return api_basic_url
 }
 
-func API_AuthTokenURL() string {
+func ApiAuthTokenURL() string {
 	return getBasicUrl() + api_auth_token
 }
-func API_TrackingURL() string {
+func ApiTrackingURL() string {
 	return getBasicUrl() + api_tracking
 }
-func API_AddressValidationURL() string {
+func ApiAddressValidationURL() string {
 	return getBasicUrl() + api_addressValidation
 }
-func API_RatingURL() string {
+func ApiRatingURL() string {
 	return getBasicUrl() + api_rating
 }
-func API_ShippingURL() string {
+func ApiShippingURL() string {
 	return getBasicUrl() + api_shipping
 }
-func API_VoidURL() string {
+func ApiVoidURL() string {
 	return getBasicUrl() + api_void
 }
 
+// Token 结构体
 type FedExTokenSt struct {
 	AccessToken string `json:"access_token"`
 	TokenType   string `json:"token_type"`

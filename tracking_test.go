@@ -1,0 +1,24 @@
+package go_fedex_restful_api_wrapper
+
+import (
+	"fmt"
+	"log"
+	"testing"
+)
+
+func TestTracking(t *testing.T) {
+	var trackingNumbers = []string{
+		"772108250528",
+		"772108249009",
+		"772108250892",
+	}
+	token := "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzY29wZSI6WyJDWFMtVFAiXSwiUGF5bG9hZCI6eyJjbGllbnRJZGVudGl0eSI6eyJjbGllbnRLZXkiOiJsN2ZiN2E3ZGVhNWUwYzQ0YTZhYmFjOThjZWJjYjBiMWM3In0sImF1dGhlbnRpY2F0aW9uUmVhbG0iOiJDTUFDIiwiYWRkaXRpb25hbElkZW50aXR5Ijp7InRpbWVTdGFtcCI6IjIwLUZlYi0yMDI1IDA0OjE1OjMzIEVTVCIsImdyYW50X3R5cGUiOiJjbGllbnRfY3JlZGVudGlhbHMiLCJhcGltb2RlIjoiTGl2ZSIsImN4c0lzcyI6Imh0dHBzOi8vY3hzYXV0aHNlcnZlci1wcm9kLmFwcC5wYWFzLmZlZGV4LmNvbS90b2tlbi9vYXV0aDIifSwicGVyc29uYVR5cGUiOiJEaXJlY3RJbnRlZ3JhdG9yX0IyQiJ9LCJleHAiOjE3NDAwNDY1MzMsImp0aSI6ImQ1NzUyZDdmLWQxOWMtNDljYy1iYjQ2LTIyMjI3MTA5ZjlmNiJ9.TLvL-PVwAiUAsaRe3MEk7xhwTdhHSJHwE4xcGpWPrbTrsh70jqR57hyCJOao-wyDlp5vdKcA6rGmyceK20apfmxtVK1-cK6bomq_v9som5LU5PqWtPZDTKM6cKKnCpv7ZEGK5CGHwh_2Ccs_d3r90G71pMtm6NMuj56273Kzc3vd743fOblltDzQlRGZ4KKnGazMrZc3RVwTctbB2MZOTwMzYbsBIjBNiwi9KSN6QhkwYIAZrcpe5HYlI6ARGhDBaHdgkPoznNmtx0qCEoP-lX70k14K0gwAUCCTvBviTlkXDLkLrGVpnCX7CJJUsuRFvB6y7alL8QFrdWNtKgR5CvCUorZTt9HwwPdso5gIuQ8tlJkywWtwrlAJUF840UW7WCtSjWvuyHfGSUDAjSfep5z4bhPNmoDJVhi93er76St61FpEERdYZCAgLYx1fOr5pdWG5z0yP0b8yyD9Ds5OZikqVTYg0g_RhHJC_8gNQM-6ZWMG_tventETLMdvfM_WbjJh1jUTek3T9-SuBvj9OJ-LBcFy1OpYRNpiULF3NHiYiAVs0sPhaZ9qBBiOu94WQ29Pe88ucQNeX74HPeCD3IEtDt_4V7KTWYzht1sprqXZ6gDTjmJDDQ3qSehxTTkYie4AF3SnVg7EeC-G0BwlljrbQeKSiX_THhwZJoXa_CQ"
+	tracking, err := Tracking(trackingNumbers, token)
+	if err != nil {
+		log.Fatal(err)
+	}
+	for _, x := range tracking {
+		log.Println(x.Output.CompleteTrackResults)
+	}
+	fmt.Printf("%#v", tracking)
+}
